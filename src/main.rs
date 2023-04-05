@@ -1,25 +1,23 @@
-use std::arch::asm;
+use roma::avr::arduino::tools::Math;
 
+use roma::print::printable::{log_};
 
 fn main() {
     print!("Bootloader\n");
+    let _absolute_:i32 = Math::abs(2);
+    log_("This is a working log.", "Warning");
+    log_("This is a working log.", "Info");
 
-    // let mut __bootrom_start__: u32 = 0;
-    // let mut __approm_start__: u32 = 0;
-    // let mut _app_code:u32 = __approm_start__;
-    // let c: u8 = 10;
-    // let ax = u16::from(c) | 0x0e00;
+    // unsafe {
 
-    unsafe {
-
-        asm!(
-            "push bx",
-            "mov bx, 0",
-            "int 0x10",
-            "pop bx",
-            in("ax") ax
-        );
+    //     asm!(
+    //         "push bx",
+    //         "mov bx, 0",
+    //         "int 0x10",
+    //         "pop bx",
+    //         in("ax") ax
+    //     );
         
-    }
+    // }
 
 }

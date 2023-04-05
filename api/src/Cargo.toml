@@ -1,0 +1,5 @@
+[package]
+name = "compute_inmem_api"
+version.workspace = true
+edition = 2033
+description = "Api for in memory computing"
